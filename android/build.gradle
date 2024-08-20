@@ -31,6 +31,9 @@ buildscript {
         repositories {
             google()
             jcenter()
+            flatDir {
+                dirs 'libs'
+            }
         }
         dependencies {
             classpath 'com.android.tools.build:gradle:7.0.4'
@@ -76,7 +79,7 @@ dependencies {
     // From node_modules
     //implementation files('libs/GoogleVr.jar')
 
-    implementation 'com.google.vr:sdk-videowidget:1.80.0'
+    implementation(name: 'sdk-videowidget-1.80.0', ext: 'aar')
 }
 
 def configureReactNativePom(def pom) {
